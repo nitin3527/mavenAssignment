@@ -18,12 +18,38 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.5</version>
-            <scope>Runtime</scope>
+            <scope>compile</scope>
+            <!-- This scope indicates that dependency is available in classpath of project
+             . It is default scope..-->
         </dependency>
         <dependency>
             <groupId>HTTPClient</groupId>
             <artifactId>HTTPClient</artifactId>
             <version>0.3-3</version>
+            <scope>provided</scope>
+            <!-- This scope indicates that dependency is to be provided by JDK
+             or web-Server/Container at runtime.-->
+        </dependency>
+        <dependency>
+            <groupId>ashkay</groupId>
+            <artifactId>ashkay</artifactId>
+            <version>0.6</version>
+            <scope>runtime</scope>
+            <!-- This scope indicates that dependency is not required for compilation,
+             but is required during execution.-->
+        </dependency>
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.1</version>
+            <scope>test</scope>
+            <!-- This scope indicates that the dependency is only available for the test compilation
+            and execution phases.-->
+        </dependency>
+        <dependency>
+            <groupId>org.jvnet.localizer</groupId>
+            <artifactId>localizer</artifactId>
+            <version>1.8</version>
         </dependency>
     </dependencies>
 
@@ -31,6 +57,10 @@
         <repository>
             <id>tutorial</id>
             <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>java-net-repo</id>
+            <url>https://maven.java.net/content/repositories/public/</url>
         </repository>
     </repositories>
 
@@ -54,7 +84,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
